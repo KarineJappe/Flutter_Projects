@@ -13,14 +13,12 @@ class UserModel {
 
     });
 
-  
 Map<String, dynamic> toJson() {
     return {
       'login': login,
       'id': id,
     };
   }
-
 
   factory UserModel.fromJson(Map<String, dynamic> map) {
     if (map == null) return null;

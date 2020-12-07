@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:githubUsers/models/details_model.dart';
 import 'package:githubUsers/models/user_model.dart';
 import 'package:githubUsers/pages/details_user.dart';
 import 'package:githubUsers/services/users.dart';
@@ -53,7 +52,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildBody() {
     if (_isLoading) {
       return _buildLoader();
-    } else {
+    }else{
       return _buildList();
     }
   }
@@ -72,8 +71,9 @@ class _HomePageState extends State<HomePage> {
       controller: _scrollController,
       padding: const EdgeInsets.all(16.0),
       separatorBuilder: (context, index) => const SizedBox(height: 14.0),
-      itemCount: _userList.length + 1,
+      itemCount: _userList.length,
       itemBuilder: (context, index) {
+      //  => _buildCard(_userList[index]),
         if (_userList.length > index) {
           final user = _userList[index];
           return _buildCard(user);
